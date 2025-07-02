@@ -255,7 +255,7 @@ namespace fheroes2
 
         // Dialog height is capped with the current screen height minus 100 pixels.
         const int32_t categoryWidth = 115;
-        fheroes2::StandardWindow background( categoryWidth + keyDescriptionLength + hotKeyLength + 8 + 95, std::min( display.height() - 100, 520 ), true, display );
+        fheroes2::StandardWindow background(categoryWidth + keyDescriptionLength + hotKeyLength + 8 + 95, std::min(display.height() - 100, 520), true, display);
 
         const fheroes2::Rect roi( background.activeArea() );
         const fheroes2::Rect listRoi( roi.x + categoryWidth + 50, roi.y + 37, keyDescriptionLength + hotKeyLength + 8, roi.height - 75 );
@@ -267,8 +267,8 @@ namespace fheroes2
         std::vector<Game::HotKeyCategory> uniqueCategories;
 
         std::set<Game::HotKeyCategory> seen;
-        for ( const auto & pair : hotKeyEvents ) {
-            if ( seen.find( pair.second ) == seen.end() ) {
+        for ( const auto& pair : hotKeyEvents ) {
+            if ( seen.find(pair.second) == seen.end() ) {
                 seen.insert( pair.second );
                 uniqueCategories.push_back( pair.second );
             }
@@ -358,6 +358,7 @@ namespace fheroes2
                         categoryOffsetY += categoryText.height() + 4;
                     }
 
+
                     listbox.SetListContent( filtered );
                     listbox.updateScrollBarImage();
                     listbox.Redraw();
@@ -365,7 +366,7 @@ namespace fheroes2
 
                     break;
                 }
-            }
+}
 
             if ( le.MouseClickLeft( buttonOk.area() ) || Game::HotKeyCloseWindow() ) {
                 return;
